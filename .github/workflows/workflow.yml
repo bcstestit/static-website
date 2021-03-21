@@ -23,8 +23,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
+      # Runs commands using the runners shell
+      - name: Build and Test
         run: |
           # Build and test the project, then
           # deploy to Azure Web App.
@@ -34,3 +34,9 @@ jobs:
       - name: list contents built
         run: ls ./dist
         
+      # Setup GH CLI on the runner
+      - name: setup gh
+        uses: shashban/example-setup-gh@v0.1
+        with:
+          version: 1.3.0 
+          
