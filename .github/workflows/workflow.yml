@@ -7,6 +7,10 @@ on:
   # Triggers the workflow on creation of a new tag
   release:
     types: [created]
+    
+  push:
+    tags:
+    - '*'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
